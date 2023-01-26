@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
+import { Product } from './product.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'my-store';
@@ -20,7 +22,7 @@ export class AppComponent {
   names: string[] = ['Santy Perez', 'El Jota', 'Morocho'];
   // names2: any[] = ['Santy Perez', 'El Jota', 'Morocho', true, 233];
   newName: string = '';
-  products = [
+  products: Product[] = [
     {
       name: 'EL mejor juguete',
       price: 565,

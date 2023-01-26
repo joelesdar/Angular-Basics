@@ -1,11 +1,21 @@
+<h1>ngSwitch</h1>
+<input type="text" required [(ngModel)]="person.name" />
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'Joel'">Hola, soy Joel</p>
+  <p *ngSwitchCase="'Juanita'">Hola, soy Juanita</p>
+  <p *ngSwitchCase="'Karla'">Hola, soy Karla</p>
+  <p *ngSwitchDefault>No hace match</p>
+</div>
+
 <h1>*ngFor Objs</h1>
-  <div>
+  <div class="products--grid">
     <div *ngFor="let product of products">
-      <img width="250" [src]="product.image" [alt]="product.name">
+      <img [src]="product.image" [alt]="product.name">
       <h2>{{ product.price }}</h2>
       <p>{{ product.name }}</p>
     </div>
   </div>
+
 <h1>*ngFor</h1>
 <input type="text" required [(ngModel)]="newName">
 <button (click)="addName()">Agregar Nombre</button>
@@ -16,6 +26,7 @@
     <button (click)="deleteName(i)">Eliminar Nombre</button>
   </li>
 </ul>
+
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="person.name" />
 <p *ngIf="person.name === 'Joel'">Hola, soy Joel</p>
@@ -23,6 +34,7 @@
 <ng-template #elseBlock>
   <p>Bloque de else</p>
 </ng-template>
+
 <h1>NgModel</h1>
 <p>Nombre: {{person.name}}</p>
 <input type="text" #nameInput="ngModel" required [(ngModel)]="person.name" />
@@ -31,6 +43,7 @@
 <input type="number" max="18" min="10" #ageInput="ngModel" required [(ngModel)]="person.age" />
 <p>valid: {{ ageInput.valid }}</p>
 <hr />
+
 <h1>Eventos</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <button (click)="toggleButton()">Toogle Button</button>
@@ -40,12 +53,14 @@
 <p>Nombre: {{person.name}}</p>
 <input type="text" [value]="person.name" (keyup)="changeName($event)" />
 <hr />
+
 <h1>Propiedades</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <input type="text" [value]="person.name" />
 <progress max="100" [value]="person.age"></progress>
 <img width="100"[src]="person.avatar" alt="image" />
 <hr />
+
 <h1>Hola mundo</h1>
 <h2>{{'Hola mundo '.repeat(5)}}</h2>
 <p>3 + 3 = {{ 3 + 3 }}</p>
