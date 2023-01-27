@@ -7,7 +7,7 @@
 
 .products--grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 15px;
   div {
     img {
@@ -17,5 +17,31 @@
     h2, p {
       margin: 0;
     }
+  }
+}
+
+.message-error {
+  background: red;
+  color: white;
+  opacity: 0;
+  transition: all linear .5s;
+  &.invalid {
+    opacity: 1;
+  }
+}
+
+.line-error {
+  height: 0;
+  border-bottom: 1px solid;
+}
+
+.styles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  &.valid {
+    border-color: green;
+  }
+  &.invalid {
+    border-color: red;
   }
 }

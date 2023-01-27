@@ -13,6 +13,12 @@ export class AppComponent {
   age = 23;
   img = 'https://images.unsplash.com/photo-1673395522841-296378daa68a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NDU3NzIxNg&ixlib=rb-4.0.3&q=80&w=1080';
   btnDisabled = true;
+  widthImg = 10;
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
   person = {
     name: 'Ana',
     age: 18,
@@ -22,6 +28,12 @@ export class AppComponent {
   names: string[] = ['Santy Perez', 'El Jota', 'Morocho'];
   // names2: any[] = ['Santy Perez', 'El Jota', 'Morocho', true, 233];
   newName: string = '';
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red',
+  };
+
   products: Product[] = [
     {
       name: 'EL mejor juguete',
@@ -82,5 +94,9 @@ export class AppComponent {
 
   deleteName(i: number) {
     this.names.splice(i, 1);
+  }
+
+  onRegister() {
+
   }
 }
